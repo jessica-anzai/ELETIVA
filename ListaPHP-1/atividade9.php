@@ -8,7 +8,7 @@
 </head>
 <body> 
 <div class="container">
-<h1>Atividade 8 - Área de Retângulo</h1>
+<h1>Atividade 9 - Área de Círculo</h1>
 <form method="post">
 <div class="mb-3">
   <div class="col-5">
@@ -23,7 +23,7 @@
     
     $r = $_POST['raio'];
     $pi = pi();
-    $area = $pi * ($r^2);
+    $area = $pi * ($r**2);
     $areaFormat = number_format($area, 2, '.', '');
     echo "A área do círculo de raio $r é de $areaFormat";
 }

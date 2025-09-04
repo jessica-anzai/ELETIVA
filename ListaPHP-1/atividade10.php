@@ -8,7 +8,7 @@
 </head>
 <body> 
 <div class="container">
-<h1>Atividade 8 - Área de Retângulo</h1>
+<h1>Atividade 10 - Perímetro de Retângulo</h1>
 <form method="post">
 <div class="mb-3">
   <div class="col-5">
