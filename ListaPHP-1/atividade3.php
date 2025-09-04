@@ -8,7 +8,7 @@
 </head>
 <body> 
 <div class="container">
-<h1>Atividade 1 - Soma de dois números</h1>
+<h1>Atividade 3 - Multiplicação de dois números</h1>
 <form method="post">
 <div class="mb-3">
   <div class="col-5">
@@ -26,8 +26,8 @@
   if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $n1 = $_POST['n1'];
     $n2 = $_POST['n2'];
-    $soma = $n1 + $n2;
-    echo "A soma de $n1 e $n2 é igual a $soma";
+    $mult = $n2 * $n1;
+    echo "$n1 X $n2 é igual a $mult";
   }
 ?>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>

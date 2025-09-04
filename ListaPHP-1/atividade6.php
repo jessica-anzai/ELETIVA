@@ -8,26 +8,23 @@
 </head>
 <body> 
 <div class="container">
-<h1>Atividade 1 - Soma de dois números</h1>
+<h1>Atividade 6 - Celcius para Fahrenheit</h1>
 <form method="post">
 <div class="mb-3">
   <div class="col-5">
-    <label for="n1" class="form-label">Informe um número</label>
-    <input type="number" id="n1" name="n1" class="form-control">
-  </div>
-  <div class="col-5">
-    <label for="n2" class="form-label">Informe outro número</label>
-    <input type="number" id="n2" name="n2" class="form-control">
+    <label for="temperatura" class="form-label">Informe a temperatura em °C</label>
+    <input type="number" id="temperatura" name="temperatura" class="form-control">
   </div>
 </div>
 <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
 <?php 
   if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $n1 = $_POST['n1'];
-    $n2 = $_POST['n2'];
-    $soma = $n1 + $n2;
-    echo "A soma de $n1 e $n2 é igual a $soma";
+    $celcius = $_POST['temperatura'];
+
+    $fahrenheit = ($celcius * 1.8) + 32;
+
+    echo "$celcius °C = $fahrenheit °F";
   }
 ?>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>

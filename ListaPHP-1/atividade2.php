@@ -8,15 +8,18 @@
 </head>
 <body> 
 <div class="container">
-<h1></h1>
+<h1>Atividade 2 - Subtração de dois números</h1>
 <form method="post">
 <div class="mb-3">
-              <label for="n1" class="form-label">Informe um número</label>
-              <input type="number" id="n1" name="n1" class="form-control">
-              
-              <label for="n2" class="form-label">Informe outro número</label>
-              <input type="number" id="n2" name="n2" class="form-control">
-            </div>
+  <div class="col-5">
+    <label for="n1" class="form-label">Informe um número</label>
+    <input type="number" id="n1" name="n1" class="form-control">
+  </div>
+  <div class="col-5">
+    <label for="n2" class="form-label">Informe outro número</label>
+    <input type="number" id="n2" name="n2" class="form-control">
+  </div>
+</div>
 <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
 <?php 
