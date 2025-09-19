@@ -10,3 +10,8 @@
 
     include("rodape.php");
 ?>
+
+while ($i <=5){
+    echo "$i";
+    $i++;
+}
