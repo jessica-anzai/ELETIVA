@@ -19,6 +19,7 @@
             </div>
         </div>
         <?php endfor ?>
+        <button class="btn btn-success mt-3" type="submit">Enviar</button>
     </div>
 </form>
 
@@ -30,15 +31,29 @@
     
     if($_SERVER['REQUEST_METHOD']=='POST'){
 
+        $nomes = $_POST['nome'];
+        $contatos = $_POST['contato'];
+
+        $agenda =[];
+
+        for ($i = 0; $i < count($nomes); $i++) {
+            $nome = trim($nomes[$i]);
+            $numero = trim($contatos[$i]);
+
+            $agenda[$nome] = $numero;
         
+        }
 
+        ksort($agenda, SORT_STRING | SORT_FLAG_CASE);
+
+        echo "<h3>Lista de Contatos:</h3>";
+        echo "<ul>";
+        foreach ($agenda as $a) {
+            echo "<li><strong>$nome</strong>: $numero</li>";
+        }
+        echo "</ul>";
         
-        
-
-
-
     }
-
 
     include('rodape.php');
 
