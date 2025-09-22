@@ -1,10 +1,10 @@
-<?php
-include("cabecalho.php");
+<?php 
+    include("cabecalho.php");
 ?>
 <form method="post">
 
     <div class="p-3 container rounded bg-success p-2 text-dark bg-opacity-10 border mt-5 w-75 mb-5">
-        <h2 class="text-center">Atividade 2</h2>
+        <h2 class="text-center">Atividade 3</h2>
         <div class="row justify-content-center">
             <div class="col-5 4mb-3">
                 <label for="n1" class="form-label">Número 1</label>
@@ -24,29 +24,33 @@ include("cabecalho.php");
     </div>
 </form>
 <?php
-    if($_SERVER['REQUEST_METHOD']=='POST'){
+
+    if($_SERVER['REQUEST_METHOD']== 'POST'){
         $n1 = $_POST['n1'];
         $n2 = $_POST['n2'];
 
-        $soma = $n1 + $n2;
+        $maior=0;
+        $menor = 0;
 
-        if($n1 == $n2){
-            $triplo = $soma*3;
+        if ($n1 > $n2){
+            $maior = $n1;
+            $menor = $n2;
+
             echo '<div class="p-3 container rounded bg-success p-2 text-dark bg-opacity-10 border mt-5 w-75 mb-5 text-center">';
             echo "<h3>RESPOSTA</h3>";
-            echo "$n1 e $n2 são iguais";
-            echo "<p>então o triplo da soma ($soma) é $triplo</p>";
+            echo "$menor - $maior";
             echo "</div>";
         }
+        else{
+            $maior = $n2;
+            $menor = $n1;
 
-        else {
             echo '<div class="p-3 container rounded bg-success p-2 text-dark bg-opacity-10 border mt-5 w-75 mb-5 text-center">';
             echo "<h3>RESPOSTA</h3>";
-            echo "A soma de $n1 e $n2 é igual a $soma";
+            echo "$menor - $maior";
             echo "</div>";
         }
-
     }
 
-include("rodape.php");
+    include("rodape.php");
 ?>
