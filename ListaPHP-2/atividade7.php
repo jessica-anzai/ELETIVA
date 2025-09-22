@@ -28,6 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo "<h3>RESPOSTA</h3>";
     while ($i <= $num) {
         $soma += $i;
+        $i++;
     }
     echo "A soma de 1 a $num é $soma";
     echo "</div>";
