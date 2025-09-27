@@ -31,28 +31,14 @@
     
     if($_SERVER['REQUEST_METHOD']=='POST'){
 
-        $nomes = $_POST['nome'];
-        $contatos = $_POST['contato'];
+        $nome = $_POST['nome'];
+        $contato = $_POST['contato'];
 
-        $agenda =[];
-
-        for ($i = 0; $i < count($nomes); $i++) {
-            $nome = trim($nomes[$i]);
-            $numero = trim($contatos[$i]);
-
-            $agenda[$nome] = $numero;
-        
+        for ($i = 1;$i <= 5; $i++){
+            $agenda[$i] = array($nome,$contato);
         }
 
-        ksort($agenda, SORT_STRING | SORT_FLAG_CASE);
-
-        echo "<h3>Lista de Contatos:</h3>";
-        echo "<ul>";
-        foreach ($agenda as $a) {
-            echo "<li><strong>$nome</strong>: $numero</li>";
-        }
-        echo "</ul>";
-        
+        print_r($agenda);
     }
 
     include('rodape.php');
