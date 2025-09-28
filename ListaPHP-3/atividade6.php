@@ -3,7 +3,7 @@
 ?>
 <form method="post">
     <div class="p-3 container rounded bg-success p-2 text-dark bg-opacity-10 border mt-5 w-75 mb-5">
-        <h2 class="text-center">Atividade 5</h2>
+        <h2 class="text-center">Atividade 6</h2>
         <div class="row justify-content-center">
             <div class="col-5 4mb-3">
                 <label for="num" class="form-label">Insira um número</label>
