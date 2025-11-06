@@ -1,0 +1,36 @@
+Sistema de Cadastro de Voluntários para ONG
+o Escopo: Controle de atividades e cadastro de voluntários.
+o RF1: CRUD para cadastro de voluntários.
+o RF2: CRUD para cadastro de projetos.
+o RF3: CRUD para cadastro de atividades, relacionando o projeto da atividade.
+o RF4: Registrar agenda dos voluntários, relacionando atividade e voluntário (registre a data e horário).
+
+TELAS:
+    - login - Cadastro
+    - projetos -> cadastro, consulta (visualizar, editar e deletar)
+    - atividades -> cadastro, consulta (visualizar, editar e deletar)
+    - agenda -> cadastro, consulta (visualizar, editar e deletar)
+
+
+RF1: cadastro, alteração, exclusão e leitura de voluntários
+    - ID
+    - CPF
+    - Nome
+    - Username
+    - E-mail
+    - Data de Nascimento
+
+RF2: cadastro, alteração, exclusão e leitura de projetos
+    - ID
+    - Descricao
+    - Tipo
+
+RF3: atividades-projeto
+    - ID
+    - Descricao
+    - ID_Projeto
+
+RF4: atividade-voluntario (agenda)
+    - ID_Voluntário
+    - ID_Atividade
+    - Datahora_Projeto
