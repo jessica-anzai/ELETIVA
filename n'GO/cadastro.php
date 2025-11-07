@@ -25,48 +25,7 @@ try{
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cadastro | n'GO - Usuário</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-  <style>
-    /* ======= Cores e estilo base ======= */
-    body {
-      background-color: #fff5eb; /* laranja clarinho */
-      font-family: 'Segoe UI', sans-serif;
-    }
-
-    .btn-laranja {
-      background-color: #f39c12;
-      color: white;
-      font-weight: 500;
-      border: none;
-    }
-
-    .btn-laranja:hover {
-      background-color: #e67e22;
-      color: white;
-    }
-
-    .text-laranja {
-      color: #e67e22;
-    }
-
-    .form-container {
-      width: 340px;
-    }
-
-    .shadow-custom {
-      box-shadow: 0 4px 20px rgba(230, 126, 34, 0.2);
-    }
-
-    .link-laranja {
-      color: #e67e22;
-      text-decoration: none;
-    }
-
-    .link-laranja:hover {
-      color: #d35400;
-      text-decoration: underline;
-    }
-  </style>
+  <link href="style.css" rel="stylesheet" />
 </head>
 
 <body>

@@ -6,54 +6,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Login | n'GO - Usuário</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-  <style>
-    /* ======= Cores e estilo base ======= */
-    body {
-      background-color: #fff5eb; /* laranja clarinho */
-      font-family: 'Segoe UI', sans-serif;
-    }
-
-    .btn-laranja {
-      background-color: #f39c12;
-      color: white;
-      font-weight: 500;
-      border: none;
-    }
-
-    .btn-laranja:hover {
-      background-color: #e67e22;
-      color: white;
-    }
-
-    .text-laranja {
-      color: #e67e22;
-    }
-
-    .form-container {
-      width: 320px;
-    }
-
-    .shadow-custom {
-      box-shadow: 0 4px 20px rgba(230, 126, 34, 0.2);
-    }
-
-    .link-laranja {
-      color: #e67e22;
-      text-decoration: none;
-    }
-
-    .link-laranja:hover {
-      color: #d35400;
-      text-decoration: underline;
-    }
-  </style>
+  <link href="style.css" rel="stylesheet" />
 </head>
 
 <body>
   <div class="container d-flex justify-content-center align-items-center vh-100">
     <form class="p-4 bg-white rounded shadow-custom form-container" method="POST">
-    
+    <?php
+      if (isset($_GET['cadastro'])) {
+        $cadastro = $_GET['cadastro'];
+        if ($cadastro) {
+          echo "<p class='text-success'>Cadastro realizado com sucesso</p>";
+        } else {
+          echo "<p class='text-success'>Erro ao realizar o cadastro!</p>";
+        }
+      }
+      if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        require('conexao.php');
+        $username = $_POST['username'];
+        $senha = $_POST['senha'];
+        try {
+          $stmt = $pdo->prepare('SELECT * FROM voluntario WHERE username = ?');
+          $stmt->execute([$username]);
+          $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+          if ($usuario && password_verify($senha, $usuario['senha'])) {
+            session_start();
+            $_SESSION['acesso'] = true;
+            $_SESSION['nome'] = $usuario['nome'];
+
+            header('location: principal.php');
+          } else {
+            echo "<p class='text-danger'>Credenciais inválidas!!</p>";
+          }
+        } catch (\Exception $e) {
+          echo "Erro: " . $e->getMessage();
+        }
+      }
+      ?>
       <div class="text-center mb-4">
         <img src="ngo.png" alt="Logo ONG" style="width: 70px;" class="mb-2">
         <p class="text-muted small mb-0">Gerenciamento de Atividades</p>

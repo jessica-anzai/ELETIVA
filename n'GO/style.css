@@ -1,0 +1,109 @@
+/* ======= Cores e estilo base ======= */
+body {
+  background-color: #fff5eb; /* laranja clarinho */
+  font-family: 'Segoe UI', sans-serif;
+}
+.body {
+  background-color: #fff5eb; /* laranja clarinho */
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ======= Navbar ======= */
+.nav {
+  background-color: #ffecd9;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #e67e22;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #f39c12;
+  background-color: rgba(255, 245, 235, 0.6);
+  border-radius: 5px;
+}
+
+.navbar-dark .navbar-nav .nav-link:focus {
+  color: #e67e22;
+}
+
+.navbar-dark .navbar-toggler {
+  border-color: #e67e22;
+}
+
+.navbar-dark .navbar-toggler-icon {
+  filter: brightness(0.8) sepia(1) saturate(3) hue-rotate(10deg);
+}
+
+.dropdown-menu {
+  background-color: #ffecd9;
+  border: 1px solid #ffe0c2;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.dropdown-item {
+  color: #e67e22;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(255, 245, 235, 0.6);
+  color: #f39c12;
+}
+
+.dropdown-item:focus {
+  background-color: rgba(255, 245, 235, 0.6);
+  color: #f39c12;
+}
+
+/* ======= Botões ======= */
+.btn-laranja,
+a.btn-laranja,
+button.btn-laranja {
+  background-color: #f39c12 !important;
+  color: white !important;
+  font-weight: 500;
+  border: none !important;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.btn-laranja:hover,
+a.btn-laranja:hover,
+button.btn-laranja:hover {
+  background-color: #e67e22 !important;
+  color: white !important;
+  text-decoration: none;
+}
+
+/* ======= Textos ======= */
+.text-laranja {
+  color: #e67e22;
+}
+
+/* ======= Formulários ======= */
+.form-container {
+  width: 340px;
+}
+
+.shadow-custom {
+  box-shadow: 0 4px 20px rgba(230, 126, 34, 0.2);
+}
+
+/* ======= Links ======= */
+.link-laranja {
+  color: #e67e22;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.link-laranja:hover {
+  color: #d35400;
+  text-decoration: underline;
+}
