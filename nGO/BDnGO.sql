@@ -17,7 +17,7 @@ USE `banco` ;
 -- -----------------------------------------------------
 -- Table `mydb`.`voluntario`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`voluntario` (
+CREATE TABLE IF NOT EXISTS `banco`.`voluntario` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(255) NOT NULL,
   `email` VARCHAR(255) NOT NULL,
@@ -30,7 +30,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`projeto`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`projeto` (
+CREATE TABLE IF NOT EXISTS `banco`.`projeto` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `descriaco` VARCHAR(255) NULL,
   `tipo` VARCHAR(255) NULL,
@@ -41,7 +41,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`atividade`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`atividade` (
+CREATE TABLE IF NOT EXISTS `banco`.`atividade` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `descricao` VARCHAR(255) NOT NULL,
   `id_projeto` INT NOT NULL,
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`atividade` (
   INDEX `fk_atividade_projeto_idx` (`id_projeto` ASC),
   CONSTRAINT `fk_atividade_projeto`
     FOREIGN KEY (`id_projeto`)
-    REFERENCES `mydb`.`projeto` (`id`)
+    REFERENCES `banco`.`projeto` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -58,7 +58,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`agenda`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`agenda` (
+CREATE TABLE IF NOT EXISTS `banco`.`agenda` (
   `id` INT NOT NULL,
   `atividade_id` INT NOT NULL,
   `voluntario_id` INT NOT NULL,
@@ -68,12 +68,12 @@ CREATE TABLE IF NOT EXISTS `mydb`.`agenda` (
   INDEX `fk_agenda_voluntario1_idx` (`voluntario_id` ASC),
   CONSTRAINT `fk_agenda_atividade1`
     FOREIGN KEY (`atividade_id`)
-    REFERENCES `mydb`.`atividade` (`id`)
+    REFERENCES `banco`.`atividade` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_agenda_voluntario1`
     FOREIGN KEY (`voluntario_id`)
-    REFERENCES `mydb`.`voluntario` (`id`)
+    REFERENCES `banco`.`voluntario` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
