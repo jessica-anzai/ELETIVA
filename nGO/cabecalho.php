@@ -24,7 +24,6 @@
   </a>
   <ul class="dropdown-menu" aria-labelledby="dropdown2">
     <li><a class="dropdown-item" href="voluntario.php">Cadastro</a></li>
-    <li><a class="dropdown-item" href="#">Consulta</a></li>
   </ul>
 </li>
 
@@ -34,7 +33,6 @@
   </a>
   <ul class="dropdown-menu" aria-labelledby="dropdown3">
     <li><a class="dropdown-item" href="#">Cadastro</a></li>
-    <li><a class="dropdown-item" href="#">Consulta</a></li>
   </ul>
 </li>
 
@@ -44,7 +42,6 @@
   </a>
   <ul class="dropdown-menu" aria-labelledby="dropdown4">
     <li><a class="dropdown-item" href="#">Cadastro</a></li>
-    <li><a class="dropdown-item" href="#">Consulta</a></li>
   </ul>
 </li>
       </ul>

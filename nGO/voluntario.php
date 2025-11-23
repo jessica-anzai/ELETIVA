@@ -26,7 +26,7 @@ if (isset($_GET['excluir']) && $_GET['excluir']) {
 ?>
 
 <h2>Cadastros de voluntários</h2>
-<a href="cadastroVoluntario.php" class="btn btn-laranja mb-3">Novo Registro</a>
+<a href="cadastroVoluntario.php" class="btn btn-laranja mb-3 no-print">Novo Registro</a>
 <table class="table table-hover table-striped">
     <thead>
         <tr>
@@ -50,13 +50,13 @@ if (isset($_GET['excluir']) && $_GET['excluir']) {
         foreach ($dados as $d):
         ?>
             <tr>
-                <td>1</td>
+                <td><?= $d['id']?></td>
                 <td><?= $d['nome'] ?></td>
                 <td><?= $d['username'] ?></td>
                 <td><?= $d['email'] ?></td>
                 <td class="d-flex gap-2">
-                    <a href="#" class="btn btn-sm btn-warning">Editar</a>
-                    <a href="#" class="btn btn-sm btn-info">Consultar</a>
+                    <a href="editarvoluntario.php?id=<?= $d['id']?>" class="btn btn-sm btn-warning">Editar</a>
+                    <a href="consultarvoluntario.php?id=<?= $d['id']?>" class="btn btn-sm btn-info">Consultar</a>
                 </td>
             </tr>
         <?php

@@ -46,7 +46,7 @@ try{
 
       <div class="mb-3">
         <label for="username" class="form-label fw-semibold">Username</label>
-        <input type="text" class="form-control" id="username" name="username" placeholder="Escolha um username" required />
+        <input type="text" class="form-control" id="username" name="username" placeholder="Não poderá ser alterado depois" required />
       </div>
 
       <div class="mb-3">
