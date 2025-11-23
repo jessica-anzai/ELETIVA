@@ -35,6 +35,14 @@
     <li><a class="dropdown-item" href="projeto.php">Cadastro</a></li>
   </ul>
 </li>
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="dropdown4" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Atividades
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="dropdown4">
+    <li><a class="dropdown-item" href="atividade.php">Cadastro</a></li>
+  </ul>
+</li>
 
 <li class="nav-item dropdown">
   <a class="nav-link dropdown-toggle" href="#" id="dropdown4" role="button" data-bs-toggle="dropdown" aria-expanded="false">
