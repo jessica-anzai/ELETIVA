@@ -32,7 +32,7 @@
     Projetos
   </a>
   <ul class="dropdown-menu" aria-labelledby="dropdown3">
-    <li><a class="dropdown-item" href="#">Cadastro</a></li>
+    <li><a class="dropdown-item" href="projeto.php">Cadastro</a></li>
   </ul>
 </li>
 
@@ -41,7 +41,7 @@
     Agenda
   </a>
   <ul class="dropdown-menu" aria-labelledby="dropdown4">
-    <li><a class="dropdown-item" href="#">Cadastro</a></li>
+    <li><a class="dropdown-item" href="agenda.php">Cadastro</a></li>
   </ul>
 </li>
       </ul>
