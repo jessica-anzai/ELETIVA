@@ -48,6 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </div>
     <button type="submit" class="btn btn-success">Enviar</button>
+    <button onclick="history.back();" type="button" class="btn btn-secondary">Voltar</button>
 </form>
 
 <?php

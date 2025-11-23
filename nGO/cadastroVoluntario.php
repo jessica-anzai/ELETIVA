@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $senha = password_hash($_POST['senha'],PASSWORD_BCRYPT);
     try {
         $stmt = $pdo->prepare('INSERT INTO voluntario(nome,email,username,senha) VALUES (?,?,?,?)');
-        if ($stmt->execute([$nome,$username,$email,$senha])) {
+        if ($stmt->execute([$nome,$email,$username,$senha])) {
             header('location: voluntario.php?cadastro=true');
         } else header('location: voluntario.php?cadastro=false');
     } catch (\Exception $e) {
@@ -36,6 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="password" id="senha" name="senha" class="form-control" required="">
     </div>
     <button type="submit" class="btn btn-laranja">Enviar</button>
+    <button onclick="history.back();" type="button" class="btn btn-secondary">Voltar</button>
 </form>
 
 

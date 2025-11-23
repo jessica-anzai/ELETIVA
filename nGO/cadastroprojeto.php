@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <form method="post" class="p-3">
     <div class="mb-3">
         <label for="descricao" class="form-label">Descrição</label>
-        <textarea id="descricao" name="descricao" class="form-control" rows="4" required=""></textarea>
+        <input type="text" id="descricao" name="descricao" class="form-control" required="">
     </div>
     <div class="mb-3">
         <label for="tipo" class="form-label">Tipo do projeto:</label>
@@ -32,6 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </select>
     </div>
     <button type="submit" class="btn btn-laranja">Enviar</button>
+    <button onclick="history.back();" type="button" class="btn btn-secondary">Voltar</button>
 </form>
 
 

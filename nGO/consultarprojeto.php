@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <input type="hidden" name="id" value="<?= $projeto['id'] ?>">
     <div class="mb-3">
         <label for="descricao" class="form-label">Descrição</label>
-        <textarea disabled id="descricao" name="descricao" class="form-control" rows="4" required=""><?= $projeto['descriaco'] ?></textarea>
+        <input type="text" disabled value="<?= $projeto['descriaco'] ?>" id="descricao" name="descricao" class="form-control" required="">
     </div>
     <div class="mb-3">
         <label for="tipo" class="form-label">Tipo do projeto:</label>

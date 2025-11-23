@@ -1,12 +1,14 @@
 <?php
 include("cabecalho.php");
 require('conexao.php');
-try {
-    $stmt = $pdo->query("SELECT * FROM projeto");
-    $dados = $stmt->fetchAll();
-} catch (\Exception $e) {
-    echo "Erro: " . $e->getMessage();
-}
+try{
+        $stmt = $pdo->query("SELECT p.descriaco, a.* FROM atividade a
+                            INNER JOIN projeto p ON p.id = a.id_projeto");
+        $dados = $stmt->fetchAll();
+        
+    }catch(\Exception $e){
+        echo "Erro: ".$e->getMessage();
+    }
 
 if (isset($_GET['cadastro']) && $_GET['cadastro']) {
     echo "<p class='text-success no-print'>Cadastro realizado!</p>";
@@ -25,13 +27,13 @@ if (isset($_GET['excluir']) && $_GET['excluir']) {
 }
 ?>
 
-<h2>Cadastros de projetos</h2>
-<a href="cadastroprojeto.php" class="btn btn-laranja mb-3 no-print">Novo Registro</a>
+<h2>Atividades</h2>
+<a href="cadastroatividade.php" class="btn btn-laranja mb-3 no-print">Novo Registro</a>
 <table class="table table-hover table-striped">
     <thead>
         <tr>
             <th colspan="4">
-                Dados dos projetos
+                Dados das atividades
             </th>
             <th class="no-print">
                 <button class="btn btn-success" onclick="window.print()">Imprimir</button>
@@ -39,8 +41,8 @@ if (isset($_GET['excluir']) && $_GET['excluir']) {
         </tr>
         <tr>
             <th>ID</th>
-            <th>Descrição</th>
-            <th>Tipo</th>
+            <th>Projeto</th>
+            <th>Atividade</th>
             <th></th>
             <th>Ações</th>
         </tr>
@@ -52,11 +54,11 @@ if (isset($_GET['excluir']) && $_GET['excluir']) {
             <tr>
                 <td><?= $d['id']?></td>
                 <td><?= $d['descriaco'] ?></td>
-                <td><?= $d['tipo'] ?></td>
+                <td><?= $d['descricao'] ?></td>
                 <td></td>
                 <td class="d-flex gap-2">
-                    <a href="editarprojeto.php?id=<?= $d['id']?>" class="btn btn-sm btn-warning">Editar</a>
-                    <a href="consultarprojeto.php?id=<?= $d['id']?>" class="btn btn-sm btn-info">Consultar</a>
+                    <a href="editaratividade.php?id=<?= $d['id']?>" class="btn btn-sm btn-warning">Editar</a>
+                    <a href="consultaratividade.php?id=<?= $d['id']?>" class="btn btn-sm btn-info">Consultar</a>
                 </td>
             </tr>
         <?php

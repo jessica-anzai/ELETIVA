@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
     <div class="mb-3">
         <label for="descricao" class="form-label">Descrição</label>
-        <textarea id="descricao" name="descricao" class="form-control" rows="4" required=""><?= $projeto['descriaco'] ?></textarea>
+        <input type="text" value="<?= $projeto['descriaco'] ?>" id="descricao" name="descricao" class="form-control" required="">
     </div>
     <div class="mb-3">
         <label for="tipo" class="form-label">Tipo do projeto:</label>
@@ -46,6 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     </div>
     <button type="submit" class="btn btn-success">Enviar</button>
+    <button onclick="history.back();" type="button" class="btn btn-secondary">Voltar</button>
 </form>
 
 <?php
