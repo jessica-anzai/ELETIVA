@@ -2,6 +2,13 @@
 require("cabecalho.php");
 require("conexao.php");
 
+try{
+    $stmt = $pdo->query('SELECT * FROM projeto');
+    $projeto = $stmt->fetchAll(PDO::FETCH_ASSOC);
+}catch(\Exception $e){
+    echo 'Erro ao consultar os projetos: '.$e->getMessage();
+}
+
 // Buscar atividade
 if ($_SERVER['REQUEST_METHOD'] == "GET") {
     try {
@@ -25,9 +32,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     try {
         $stmt = $pdo->prepare("DELETE from atividade WHERE id = ?");
         if ($stmt->execute([$id])) {
-            header('location: projeto.php?excluir=true');
+            header('location: atividade.php?excluir=true');
         } else {
-            header('location: projeto.php?excluir=false');
+            header('location: atividade.php?excluir=false');
         }
     } catch (\Exception $e) {
         echo "Erro: " . $e->getMessage();
@@ -41,9 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     <div class="mb-3">
         <label class="form-label">Projeto</label>
-        <input type="text" id="projeto" disabled 
-               value="<?= $projetoSelecionado['descriaco'] ?>"
-               class="form-control">
+        <input type="text" id="projeto" disabled value="<?= $projetoSelecionado['descriaco'] ?>" class="form-control">
     </div>
 
     <div class="mb-3">

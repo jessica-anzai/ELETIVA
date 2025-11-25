@@ -27,7 +27,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="mb-3">
         <label for="nome" class="form-label">Selecione o projeto</label>
         <select id="projeto" name="projeto" class="form-select" required="">
-            <?php foreach ($projeto as $p): ?>    
+            <option selected value="">Selecione uma opção</option> 
+            <?php foreach ($projeto as $p): ?>   
                 <option value="<?= $p['id'] ?>"><?= $p['descriaco'] ?></option>
             <?php endforeach; ?>
         </select>
