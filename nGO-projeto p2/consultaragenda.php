@@ -2,29 +2,16 @@
 require("cabecalho.php");
 require("conexao.php");
 
-/* ===============================
-   BUSCAR DADOS DA AGENDA SELECIONADA
-================================= */
-if (!isset($_GET['id'])) {
-    die("ID não informado.");
-}
-
 try {
     $stmt = $pdo->prepare("SELECT * FROM agenda WHERE id = ?");
     $stmt->execute([$_GET['id']]);
     $agenda = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if (!$agenda) {
-        die("Registro não encontrado.");
-    }
 } catch (Exception $e) {
     echo "Erro ao buscar agenda: " . $e->getMessage();
 }
 
 
-/* ===============================
-   BUSCAR VOLUNTÁRIOS
-================================= */
 try {
     $stmt = $pdo->query("SELECT * FROM voluntario");
     $voluntario = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -32,10 +19,6 @@ try {
     echo "Erro ao consultar voluntários: " . $e->getMessage();
 }
 
-
-/* ===============================
-   BUSCAR ATIVIDADES
-================================= */
 try {
     $stmt = $pdo->query("SELECT * FROM atividade");
     $atividade = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -44,9 +27,6 @@ try {
 }
 
 
-/* ===============================
-   EXCLUIR REGISTRO
-================================= */
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $id = $_POST['id'];
 
@@ -70,7 +50,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <form method="post">
     <input type="hidden" name="id" value="<?= $agenda['id'] ?>">
 
-    <!-- VOLUNTÁRIO -->
     <div class="mb-3">
         <label class="form-label">Voluntário</label>
         <select disabled class="form-select">
@@ -83,7 +62,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         </select>
     </div>
 
-    <!-- ATIVIDADE -->
     <div class="mb-3">
         <label class="form-label">Atividade</label>
         <select disabled class="form-select">
@@ -96,7 +74,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         </select>
     </div>
 
-    <!-- DATA -->
     <div class="mb-3">
         <label class="form-label">Data</label>
         <input 

@@ -82,9 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <div class="mb-3">
         <label for="datahora" class="form-label">Data</label>
-        <input type="date" id="datahora" name="datahora"
-               value="<?= $agenda['datahora'] ?>" 
-               class="form-control" required="">
+        <input type="date" id="datahora" name="datahora" value="<?= $agenda['datahora'] ?>" class="form-control" required="">
     </div>
 
     <button type="submit" class="btn btn-success">Salvar</button>
