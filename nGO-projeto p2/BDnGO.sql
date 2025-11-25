@@ -59,10 +59,10 @@ ENGINE = InnoDB;
 -- Table `mydb`.`agenda`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `banco`.`agenda` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `atividade_id` INT NOT NULL,
   `voluntario_id` INT NOT NULL,
-  `datahora` DATETIME NULL,
+  `datahora` DATE NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_agenda_atividade1_idx` (`atividade_id` ASC),
   INDEX `fk_agenda_voluntario1_idx` (`voluntario_id` ASC),

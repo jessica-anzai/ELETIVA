@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $datahora = $_POST['datahora'];
     try {
         $stmt = $pdo->prepare('INSERT INTO agenda(atividade_id,voluntario_id,datahora) VALUES (?,?,?)');
-        if ($stmt->execute([$voluntarioID,$atividadeID,$datahora])) {
+        if ($stmt->execute([$atividadeID,$voluntarioID,$datahora])) {
             header('location: agenda.php?cadastro=true');
         } else header('location: agenda.php?cadastro=false');
     } catch (\Exception $e) {
